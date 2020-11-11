@@ -8,8 +8,8 @@ const Nav = props => {
         <NavBox>
             <Logo to='/'>Secret Family Recipes</Logo>
             <Menu>
-                <MenuLinks to='/my-recipes'>My Recipes</MenuLinks>
-                <MenuLinks to='/discover'>Discover</MenuLinks>
+                <MenuLinks to='/'>Home</MenuLinks>
+                <MenuLinks to='/sign-up'>Sign Up</MenuLinks>
                 <MenuLinks to='/add-a-recipe'>Add a Recipe</MenuLinks>
             </Menu>
         </NavBox>
