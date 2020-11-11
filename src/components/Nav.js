@@ -19,13 +19,16 @@ const Nav = props => {
 const NavBox = styled.nav`
     display: grid;
     min-height: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-content: center;
     align-items: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 2px solid #fff;
     padding: 0 3rem;
     color: #fff;
     text-shadow: 2px 3px 3px rgba(0,0,0,0.3);
+    @media (max-width: 650px) {
+        text-align: center;
+    }
 
 `
 
@@ -44,6 +47,10 @@ const Logo = styled(Link)`
 
 const Menu = styled.div`
     justify-self: end;
+    @media (max-width: 650px){
+        justify-self: center;
+        padding-bottom: 1rem;
+    }
 `
 
 const MenuLinks = styled(Link)`

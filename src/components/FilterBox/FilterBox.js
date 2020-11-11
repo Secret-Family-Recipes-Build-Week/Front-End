@@ -32,6 +32,7 @@ const FilterWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     width: 500px;
     gap: 1rem;
+    padding: 0 2rem;
 `
 
 export default FilterBox
