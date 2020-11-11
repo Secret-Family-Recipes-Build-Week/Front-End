@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const RecipeCard = props => {
 
-    const { title, source, method, ingredients } = props
+    const { title, source, method, ingredients, description } = props
 
     return (
         <CardBox>
@@ -13,6 +13,8 @@ const RecipeCard = props => {
             <RecipeContent>
                 <SubHead>Source:</SubHead>
                 <p>{source}</p>
+                <SubHead>Description:</SubHead>
+                <p>{description}</p>
                 <SubHead>Ingredients:</SubHead>
                 <Ul>
                 {ingredients.map(ingredient => {

@@ -48,6 +48,7 @@ const Recipes = props => {
                             source={recipe.source}
                             ingredients={recipe.ingredients}
                             method={recipe.method}
+                            description={recipe.description}
                         />
                     )
                 }
