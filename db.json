@@ -1,0 +1,148 @@
+{
+    "recipes": [
+      {
+        "id": "1",
+        "recipe_title": "Birthday Cake",
+        "source": "Katherine Miller's Mom",
+        "ingredients": [
+          "3 squres Baker's unsweetened chocolate",
+          "1/2 cup water",
+          "1 cup sour cream",
+          "2 cup sifter cake flour"
+        ],
+        "method": [
+          "Preheat oven to 350 degrees",
+          "Melt chocolate with water in a saucepan over very low heat; stir to blend well. Cool thorougly, stir in sour cream."
+        ]
+      },
+      {
+        "id": "TphD4BC",
+        "recipe_title": "Artichoke Dip",
+        "source": "Katie J.M Baker's Mom",
+        "ingredients": [
+          "1 cup Best Foods mayo",
+          "1 cup freshly grated Paremsan cheese",
+          "1 1/2 cups shredded mozzarella",
+          "2 cups artichoke hearts, well-drained & chopped (press a bit to get the water out)"
+        ],
+        "method": [],
+        "category": ""
+      },
+      {
+        "id": "QX1afg0",
+        "recipe_title": "Blintz Casserole",
+        "source": "Miriam Berger's Nana",
+        "ingredients": [
+          "1/2 lb melted margarine",
+          "2 eggs",
+          "1/2 cup sugar",
+          "1/2 cup milk",
+          "1 teaspoon vanilla",
+          "1 cup flour, sifted",
+          "3 teaspoons baking powder"
+        ],
+        "method": [],
+        "category": ""
+      },
+      {
+        "id": "yOAx8Ub",
+        "recipe_title": "Carrot Pudding",
+        "source": "Adam Davis's Grandma",
+        "ingredients": [
+          "3/4 cup Crisco",
+          "1/2 to 3/4 cup light brown sugar",
+          "1 tablespoon water",
+          "1 egg, beaten",
+          "1 1/4 cup flour",
+          "1 teaspoon baking powder",
+          "1/2 teaspoon cinnamon",
+          "1/2 teaspoon nutmeg",
+          "1/2 teaspoon salt",
+          "1/2 teaspoon baking soda",
+          "2 cups grate carrots"
+        ],
+        "method": [],
+        "category": ""
+      },
+      {
+        "id": "05Ydgp8",
+        "recipe_title": "Challah",
+        "source": "Deena Shanker's Big Sister",
+        "ingredients": [
+          "5 eggs, separated",
+          "1 1/2 cups of warm water",
+          "1/3 cup oil",
+          "1/2 cup and 2 tablespoons of sugar",
+          "1-1/8 tsp salt",
+          "5 cups of flour",
+          "2 tablespoons of yeast"
+        ],
+        "method": [],
+        "category": ""
+      },
+      {
+        "id": "aizEBhJ",
+        "recipe_title": "Chicken Gizzards",
+        "source": "Shani Hilton's Dad",
+        "ingredients": [
+          "1/2 to 1 cup of flour",
+          "1 egg",
+          "Some salt",
+          "Mix of chicken gizzards and hearts",
+          "Half inch of canola or peanut oil in cast iron skillet"
+        ],
+        "method": [],
+        "category": ""
+      },
+      {
+        "id": "b64CE3f",
+        "recipe_title": "Chocolate Chip Cake",
+        "source": "Sam Stryker's Mom",
+        "ingredients": [
+          "1 Box Duncan Hines Yellow Cake Mix",
+          "1 package instant vanilla (or French vanilla) pudding",
+          "4 eggs",
+          "1 cup water",
+          "1/2 cup oil",
+          "1 bar German sweet chocolate bar - grated",
+          "6-oz. package chocolate chips",
+          "2 tablespoons confectioners' sugar"
+        ],
+        "method": [
+          "Grease a 9x13 pan",
+          "Heat oven to 350 degrees",
+          "Beat eggs, water and oil together",
+          "Add to cake mix and instant pudding"
+        ],
+        "category": ""
+      },
+      {
+        "id": "DNXGbcf",
+        "recipe_title": "Frida's Cake",
+        "source": "Mormor",
+        "description": "It's real good!",
+        "ingredients": [
+          "Butter",
+          "More Butter",
+          "Sugar",
+          "Chocolate"
+        ],
+        "method": [
+          "Mix it all together",
+          "Bake it up"
+        ],
+        "category": ""
+      },
+      {
+        "id": "x1FL94t",
+        "recipe_title": "Test recipe",
+        "source": "recip",
+        "description": "adlfjadslf",
+        "ingredients": [
+          "test ingredient"
+        ],
+        "method": [],
+        "category": ""
+      }
+    ]
+  }
