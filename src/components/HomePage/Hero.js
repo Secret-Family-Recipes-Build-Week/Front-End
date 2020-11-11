@@ -21,6 +21,8 @@ const HeroWrapper = styled.div`
     align-content: center;
     text-align: center;
     padding: 2rem;
+    color: #fff;
+    text-shadow: 2px 3px 3px rgba(0,0,0,0.3);
 `
 
 const Headline = styled.h1`

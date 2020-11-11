@@ -24,6 +24,9 @@ const NavBox = styled.nav`
     align-items: center;
     border-bottom: 1px solid #ccc;
     padding: 0 3rem;
+    color: #fff;
+    text-shadow: 2px 3px 3px rgba(0,0,0,0.3);
+
 `
 
 
@@ -31,9 +34,12 @@ const Logo = styled(Link)`
     font-size: 2.4rem;
     text-decoration: none;
     color: inherit;
-    letter-spacing: -1px;
+    letter-spacing: -.2rem;
     font-weight: 800;
     padding: 1rem;
+    &:hover{
+        text-shadow: 2px 3px 3px rgba(0,0,0,0.7);
+    }
 `
 
 const Menu = styled.div`
@@ -48,7 +54,7 @@ const MenuLinks = styled(Link)`
     text-decoration: none;
     color: inherit;
     &:hover{
-        font-weight: 600;
+        text-shadow: 2px 3px 3px rgba(0,0,0,0.7);
     }
 `
 

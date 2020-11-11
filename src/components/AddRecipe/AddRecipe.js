@@ -20,6 +20,8 @@ const Headline = styled.h1`
     max-width: 45rem;
     text-align: center;
     line-height: 3rem;
+    color: #fff;
+    text-shadow: 2px 3px 3px rgba(0,0,0,0.3);
 `
 
 const Wrapper = styled.div`

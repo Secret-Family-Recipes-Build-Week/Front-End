@@ -112,6 +112,7 @@ const RecipeForm = props => {
 
     return (
         <Form id="recipeForm" onSubmit={formSubmit}>
+
             <Label htmlFor='recipe_title'>Recipe Name</Label>
             <Input
                 id='recipe_title'
@@ -121,6 +122,19 @@ const RecipeForm = props => {
                 onChange={inputChange}
                 value={formState.recipe_title} 
             />
+
+            <Label htmlFor='category'>Category</Label>
+            <Select
+                onChange={inputChange}
+                value={formState.category}
+                name='category'    
+            >
+                <option value='Breakfast'>Breakfast</option>
+                <option value='Lunch'>Lunch</option>
+                <option value='Dinner'>Dinner</option>
+                <option value='Dessert'>Dessert</option>
+            </Select>
+
             <Label htmlFor='source'>Recipe Source</Label>
             <Input
                 id='source'
@@ -130,6 +144,7 @@ const RecipeForm = props => {
                 onChange={inputChange}
                 value={formState.source}
             />
+
             <Label>Description</Label>
             <TextAreaInput
                 id='description'
@@ -138,6 +153,7 @@ const RecipeForm = props => {
                 onChange={inputChange} 
             
             />
+
             <Label>Image URL</Label>
             <Input
                 id='img'
@@ -147,12 +163,15 @@ const RecipeForm = props => {
                 onChange={inputChange}
                 value={formState.img}
             />
+
             <Label htmlFor='ingredients'>Ingredients</Label>
             {createIngredientInputs()}
             <AddInputBtn onClick={addIngredient}>Add Ingredient</AddInputBtn>
+
             <Label htmlFor='method'>Method</Label>
             {createMethodInputs()}
             <AddInputBtn onClick={addStep}>Add Step</AddInputBtn>
+
             <Button id='submit' type='submit'>Add Recipe</Button>
         </Form>
     )
@@ -172,6 +191,14 @@ const Form = styled.form`
 `
 
 const Input = styled.input`
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: .5rem 0;
+    width: 100%;
+`
+
+const Select = styled.select`
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 6px;
