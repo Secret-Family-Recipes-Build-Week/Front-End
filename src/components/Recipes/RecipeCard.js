@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const RecipeCard = props => {
 
-    const { title, source, method, ingredients, description } = props
+    const { title, source, method, ingredients, description, img } = props
 
     return (
         <CardBox>
@@ -11,6 +11,11 @@ const RecipeCard = props => {
                 <RecipeTitle>{title}</RecipeTitle>
             </TitleBox>
             <RecipeContent>
+
+                {img !== '' 
+                    ? <RecipeImage src={img} /> 
+                    : <></>
+                }
                 <SubHead>Source:</SubHead>
                 <p>{source}</p>
                 <SubHead>Description:</SubHead>
@@ -53,6 +58,14 @@ const TitleBox = styled.div`
     border-bottom: .2rem solid #AC503C;
     width: 100%;
     padding: 3rem 2rem 1rem 2rem;
+`
+
+const RecipeImage = styled.img`
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border: 3px solid #fff;
+    border-radius: 3px;
 `
 
 const RecipeTitle = styled.h3`

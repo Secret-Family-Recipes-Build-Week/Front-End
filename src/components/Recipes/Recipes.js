@@ -49,6 +49,7 @@ const Recipes = props => {
                             ingredients={recipe.ingredients}
                             method={recipe.method}
                             description={recipe.description}
+                            img={recipe.img}
                         />
                     )
                 }

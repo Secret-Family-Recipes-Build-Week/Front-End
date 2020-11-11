@@ -6,6 +6,7 @@ const RecipeForm = props => {
 
     const initialFormState = {
         id: '',
+        img: '',
         recipe_title: '',
         source: '',
         description: '',
@@ -136,6 +137,15 @@ const RecipeForm = props => {
                 value={formState.description}
                 onChange={inputChange} 
             
+            />
+            <Label>Image URL</Label>
+            <Input
+                id='img'
+                name='img'
+                type='text'
+                placeholder='Enter Image URL of the recipe'
+                onChange={inputChange}
+                value={formState.img}
             />
             <Label htmlFor='ingredients'>Ingredients</Label>
             {createIngredientInputs()}
