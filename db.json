@@ -145,5 +145,12 @@
       ],
       "category": ""
     }
+  ],
+  "users": [
+    {
+      "id": "4S-79Ym",
+      "name": "Test Name",
+      "email": "test@test.com"
+    }
   ]
 }

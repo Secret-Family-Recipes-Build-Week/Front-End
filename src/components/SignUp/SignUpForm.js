@@ -1,19 +1,72 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import Axios from 'axios'
 
 const SignUpForm = props => {
+
+
+    const initialFormState = {
+        id: '',
+        name: '',
+        email: '',
+    }
+
+    const [formState, setFormState] = useState(initialFormState)
+
+    /*INPUT CHANGE */
+
+    const inputChange = e => {
+        e.persist()
+        const newFormData = {
+            ...formState,
+            [e.target.name]: e.target.value
+        }
+        setFormState(newFormData)
+    }
+
+    /*FORM SUBMIT */
+
+    const formSubmit = (e) => {
+        e.preventDefault()
+
+        Axios
+            .post("http://localhost:8000/users", formState)
+            .then(response => {
+                console.log(response.data)
+
+                setFormState(initialFormState)
+            })
+
+    }
 
     return (
         <Wrapper>
             <Headline>Sign Up</Headline>
-            <Form>
-                <Label>Name</Label>
-                <Input type='text' />
-                
-                <Label>Email</Label>
-                <Input type='email' />
+            <Form id='signUpForm' onSubmit={formSubmit}>
+                <Label htmlFor='name'>Name</Label>
+                <Input 
+                    id='name'
+                    name='name'
+                    placeholder='Enter your name'
+                    value={formState.name}
+                    onChange={inputChange}
+                    type='text'
+                    required
+                />
 
-                <Button>Sign Up</Button>
+                <Label htmlFor='email'>Email</Label>
+                <Input 
+                    type='email'
+                    id='email'
+                    name='email'
+                    placeholder='Enter your email'
+                    value={formState.email}
+                    onChange={inputChange}
+                    type='email'
+                    required 
+                />
+
+                <Button id='submit' type='submit'>Sign Up</Button>
             </Form>
         </Wrapper>
 
