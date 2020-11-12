@@ -5,7 +5,7 @@ import Categories from './Categories'
 
 const FilterBox = props => {
 
-    const { handleSearchFilter, search, setSearch } = props
+    const { handleSearchFilter, search, setSearch, setCategory, category, handleCategoryFilter } = props
 
     return (
         <FilterArea>
@@ -15,7 +15,7 @@ const FilterBox = props => {
                     search={search}
                     setSearch={setSearch}
                 />
-                <Categories />
+                <Categories handleCategoryFilter={handleCategoryFilter} category={category}/>
             </FilterWrapper>
         </FilterArea>
     )

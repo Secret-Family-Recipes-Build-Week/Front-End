@@ -63,9 +63,9 @@ const TitleBox = styled.div`
 const RecipeImage = styled.img`
     object-fit: cover;
     width: 100%;
-    height: auto;
+    height: 30rem;
     border: 3px solid #fff;
-    border-radius: 3px;
+    border-radius: 6px;
 `
 
 const RecipeTitle = styled.h3`

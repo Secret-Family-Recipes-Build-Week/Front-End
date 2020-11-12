@@ -2,7 +2,7 @@
   "recipes": [
     {
       "id": "1",
-      "img": "",
+      "img": "https://img.buzzfeed.com/buzzfeed-static/static/2014-08/5/14/enhanced/webdr06/grid-cell-24563-1407262125-9.jpg?output-quality=auto&output-format=auto",
       "recipe_title": "Birthday Cake",
       "source": "Katherine Miller's Mom",
       "ingredients": [
@@ -14,11 +14,12 @@
       "method": [
         "Preheat oven to 350 degrees",
         "Melt chocolate with water in a saucepan over very low heat; stir to blend well. Cool thorougly, stir in sour cream."
-      ]
+      ],
+      "category": "Dessert"
     },
     {
       "id": "TphD4BC",
-      "img": "",
+      "img": "https://img.buzzfeed.com/buzzfeed-static/static/2014-08/4/15/enhanced/webdr04/original-16086-1407182359-3.jpg?output-quality=auto&output-format=auto",
       "recipe_title": "Artichoke Dip",
       "source": "Katie J.M Baker's Mom",
       "ingredients": [
@@ -28,11 +29,11 @@
         "2 cups artichoke hearts, well-drained & chopped (press a bit to get the water out)"
       ],
       "method": [],
-      "category": ""
+      "category": "Dinner"
     },
     {
       "id": "QX1afg0",
-      "img": "",
+      "img": "https://img.buzzfeed.com/buzzfeed-static/static/2014-08/4/15/enhanced/webdr07/original-8047-1407180011-6.jpg?output-quality=auto&output-format=auto",
       "recipe_title": "Blintz Casserole",
       "source": "Miriam Berger's Nana",
       "ingredients": [
@@ -45,11 +46,11 @@
         "3 teaspoons baking powder"
       ],
       "method": [],
-      "category": ""
+      "category": "Dinner"
     },
     {
       "id": "yOAx8Ub",
-      "img": "",
+      "img": "https://img.buzzfeed.com/buzzfeed-static/static/2014-08/5/14/enhanced/webdr07/grid-cell-30059-1407262181-2.jpg?output-quality=auto&output-format=auto&downsize=360:*",
       "recipe_title": "Carrot Pudding",
       "source": "Adam Davis's Grandma",
       "ingredients": [
@@ -66,11 +67,11 @@
         "2 cups grate carrots"
       ],
       "method": [],
-      "category": ""
+      "category": "Dessert"
     },
     {
       "id": "05Ydgp8",
-      "img": "",
+      "img": "https://img.buzzfeed.com/buzzfeed-static/static/2014-07/31/13/enhanced/webdr11/original-2233-1406829396-14.jpg?output-quality=auto&output-format=auto",
       "recipe_title": "Challah",
       "source": "Deena Shanker's Big Sister",
       "ingredients": [
@@ -83,11 +84,11 @@
         "2 tablespoons of yeast"
       ],
       "method": [],
-      "category": ""
+      "category": "Dinner"
     },
     {
       "id": "aizEBhJ",
-      "img": "",
+      "img": "https://img.buzzfeed.com/buzzfeed-static/static/2014-08/4/17/enhanced/webdr04/enhanced-25374-1407187682-1.jpg?output-quality=auto&output-format=auto",
       "recipe_title": "Chicken Gizzards",
       "source": "Shani Hilton's Dad",
       "ingredients": [
@@ -98,11 +99,11 @@
         "Half inch of canola or peanut oil in cast iron skillet"
       ],
       "method": [],
-      "category": ""
+      "category": "Dinner"
     },
     {
       "id": "b64CE3f",
-      "img": "",
+      "img": "https://img.buzzfeed.com/buzzfeed-static/static/2014-07/31/14/enhanced/webdr06/original-25139-1406829831-25.jpg?output-quality=auto&output-format=auto",
       "recipe_title": "Chocolate Chip Cake",
       "source": "Sam Stryker's Mom",
       "ingredients": [
@@ -121,7 +122,7 @@
         "Beat eggs, water and oil together",
         "Add to cake mix and instant pudding"
       ],
-      "category": ""
+      "category": "Dessert"
     },
     {
       "id": "-s1dh_T",
@@ -143,7 +144,36 @@
         "Whip cream [like this, minus the sugar]. Fold in Marshmallow Fluff. Gradually add creme de menthe and creme de cacao. Spoon filling into crust and add remaining Oreo crumbs to the top.",
         "Cover tightly and freeze a few hours or overnight before serving. Can be kept frozen for 1 month."
       ],
-      "category": ""
+      "category": "Dessert"
+    },
+    {
+      "id": "O9sSN3r",
+      "img": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Grandma-s-English-Trifle_EXPS_SDDJ19_4292_C07_24_5b-1-696x696.jpg",
+      "recipe_title": "Grandma’s English Trifle",
+      "source": "Ruth Verratti's Grandmother",
+      "description": "This scrumptious trifle recipe is a family heirloom. My grandmother would make an enormous dish of it for Saturday night dinners when they often had guests. If there were leftovers, they'd eat that English trifle dessert every night that week until it was gone!",
+      "ingredients": [
+        "1 prepared loaf pound cake or 1 package (10-3/4 ounces) frozen pound cake, thawed",
+        "1/4 to 1/2 cup raspberry jam",
+        "1 package (3 to 3-1/2 ounces) regular or instant vanilla pudding mix",
+        "2-1/2 cups 2% milk",
+        "1 cup chilled heavy whipping cream",
+        "3 tablespoons confectioners' sugar",
+        "Slivered almonds",
+        "Maraschino cherries, halved"
+      ],
+      "method": [
+        "Slice pound cake in half horizontally. Spread with jam and replace top of cake.",
+        "Slice cake into 9 pieces.",
+        "Line the sides and fill the center of a 2-qt. glass serving bowl with cake pieces.",
+        "Prepare pudding with milk.",
+        "Pour over cake.",
+        "Chill.",
+        "Beat cream and sugar until soft peaks form; spread over cake and pudding.",
+        "Chill at least 4 hours.",
+        "Garnish with almonds and cherries."
+      ],
+      "category": "Dessert"
     }
   ],
   "users": [

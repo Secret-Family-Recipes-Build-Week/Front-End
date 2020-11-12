@@ -8,10 +8,15 @@ const Recipes = props => {
 
     const [recipes, setRecipes] = useState([])
     const [search, setSearch] = useState('')
+    const [category, setCategory] = useState('')
     const [searchResults, setSearchResults] = useState([])
 
     const handleSearchFilter = e => {
         setSearch(e.target.value)
+    }
+
+    const handleCategoryFilter = e => {
+        setCategory(e.target.value)
     }
 
     useEffect(() => {
@@ -27,10 +32,15 @@ const Recipes = props => {
     },[])
 
     useEffect(() => {
-        const results = recipes.filter(recipe => recipe.recipe_title.includes(search))
-        setSearchResults(results)
-        console.log(searchResults)
-    },[search])
+        if(category === ''){
+            const results = recipes.filter(recipe => (recipe.recipe_title.toLowerCase().includes(search.toLowerCase())))
+            setSearchResults(results)
+        } else {
+            const results = recipes.filter(recipe => (recipe.recipe_title.toLowerCase().includes(search.toLowerCase()) && recipe.category === category))
+            setSearchResults(results)
+        }
+    },[search,category])
+
 
     return (
         <div>
@@ -38,6 +48,9 @@ const Recipes = props => {
                 handleSearchFilter={handleSearchFilter}
                 search={search}
                 setSearch={setSearch}
+                category={category}
+                setCategory={setCategory}
+                handleCategoryFilter={handleCategoryFilter}
             />
             <RecipesWrapper>
                 {searchResults.map((recipe) => {

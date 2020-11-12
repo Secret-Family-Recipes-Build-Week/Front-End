@@ -4,12 +4,15 @@ import styled from 'styled-components'
 const Categories = props => {
 
     return (
-        <Select>
-            <option>All Categories</option>
-            <option>Breakfast</option>
-            <option>Lunch</option>
-            <option>Dinner</option>
-            <option>Desert</option>
+        <Select 
+            onChange={props.handleCategoryFilter}
+            value={props.category}    
+        >
+            <option value=''>All Categories</option>
+            <option value='Breakfast'>Breakfast</option>
+            <option value='Lunch'>Lunch</option>
+            <option value='Dinner'>Dinner</option>
+            <option value='Dessert'>Dessert</option>
         </Select>
     )
 }

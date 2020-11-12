@@ -90,9 +90,9 @@ const RecipeForm = props => {
     }
 
 
-    useEffect(() => {
-        console.log(formState)
-    },[formState])
+    // useEffect(() => {
+    //     console.log(formState)
+    // },[formState])
 
     //On Form Submit Post to JSON Server
 
