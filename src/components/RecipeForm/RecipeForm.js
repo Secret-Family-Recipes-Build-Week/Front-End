@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Axios from 'axios'
+import { useHistory } from 'react-router-dom'
+
+
 
 const RecipeForm = props => {
+
+    let history = useHistory();
 
     const initialFormState = {
         id: '',
@@ -103,12 +108,14 @@ const RecipeForm = props => {
             .post("http://localhost:8000/recipes", formState)
             .then(response => {
                 console.log(response.data)
-
                 setFormState(initialFormState)
+                history.push('/')
+
             })
-
+            .catch(err => {
+                console.log(err);
+            })
     }
-
 
     return (
         <Form id="recipeForm" onSubmit={formSubmit}>
@@ -127,8 +134,9 @@ const RecipeForm = props => {
             <Select
                 onChange={inputChange}
                 value={formState.category}
-                name='category'    
+                name='category'   
             >
+                <option value="" disabled>Select category</option>
                 <option value='Breakfast'>Breakfast</option>
                 <option value='Lunch'>Lunch</option>
                 <option value='Dinner'>Dinner</option>

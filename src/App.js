@@ -12,9 +12,9 @@ function App() {
   return (
     <div>
       <Nav />
-      <Route exact path='/' component={HomePage} />
-      <Route path='/add-a-recipe' component={AddRecipe} />
-      <Route path='/sign-up' component={SignUpForm} />
+      <Route exact path='/' render={(props) => (<HomePage />)} />
+      <Route path='/add-a-recipe' render={(props) => (<AddRecipe />)} />
+      <Route path='/sign-up' render={(props) => (<SignUpForm />)} />
     </div>
   );
 }
