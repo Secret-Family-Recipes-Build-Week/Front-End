@@ -6,7 +6,7 @@ const SignUpForm = props => {
 
 
     const initialFormState = {
-     
+        id: '',
         name: '',
         email: '',
     }

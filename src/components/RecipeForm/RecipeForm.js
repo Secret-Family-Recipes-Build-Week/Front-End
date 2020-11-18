@@ -105,7 +105,9 @@ const RecipeForm = props => {
         e.preventDefault()
 
         Axios
+        
             .post("http://localhost:8000/recipes", formState)
+            
             .then(response => {
                 console.log(response.data)
                 setFormState(initialFormState)
