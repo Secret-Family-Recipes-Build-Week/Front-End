@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import Axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import Axios from 'axios';
+import axiosWithAuth from "../axiosAuth/axiosWithAuth";
+import {useHistory} from "react-router-dom";
 
 const SignUpForm = props => {
 
-
+    const history = useHistory();
     const initialFormState = {
         id: '',
         name: '',
-        email: '',
+        password: '',
     }
 
     const [formState, setFormState] = useState(initialFormState)
@@ -28,13 +30,19 @@ const SignUpForm = props => {
 
     const formSubmit = (e) => {
         e.preventDefault()
-
         Axios
-            .post("http://localhost:8000/users", formState)
+        // axiosWithAuth()
+            // .post('https://family-recipe-backend.herokuapp.com/auth/register', formState)
+            .get('https://family-recipe-backend.herokuapp.com/users/:id')
             .then(response => {
-                console.log(response.data)
-
-                setFormState(initialFormState)
+                console.log(response);
+                // console.log(response.data);
+                // setFormState(initialFormState);
+                // localStorage.setItem("token", response.data.token);
+                // history.push("/login");
+            })
+            .catch(err =>{
+                console.log("error post signup :", err);
             })
 
     }
@@ -51,19 +59,19 @@ const SignUpForm = props => {
                     value={formState.name}
                     onChange={inputChange}
                     type='text'
-                    required
+                    // required
                 />
 
-                <Label htmlFor='email'>Email</Label>
+                <Label htmlFor='password'>pw</Label>
                 <Input 
-                    type='email'
-                    id='email'
-                    name='email'
+                    type='text'
+                    id='password'
+                    name='password'
                     placeholder='Enter your email'
-                    value={formState.email}
+                    value={formState.password}
                     onChange={inputChange}
-                    type='email'
-                    required 
+                    // type='email'
+                    // required 
                 />
 
                 <Button id='submit' type='submit'>Sign Up</Button>
