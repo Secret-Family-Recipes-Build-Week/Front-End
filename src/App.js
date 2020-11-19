@@ -7,6 +7,7 @@ import HomePage from './components/HomePage/HomePage'
 import AddRecipe from './components/AddRecipe/AddRecipe'
 import Nav from './components/Nav'
 import SignUpForm from './components/SignUp/SignUpForm'
+import LoginForm from './components/Login/LoginForm'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route exact path='/' component={HomePage} />
       <Route path='/add-a-recipe' component={AddRecipe} />
       <Route path='/sign-up' component={SignUpForm} />
+      <Route path = '/log-in' component = {LoginForm} />
     </div>
   );
 }

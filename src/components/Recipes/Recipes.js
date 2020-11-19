@@ -24,8 +24,9 @@ const Recipes = props => {
         const getRecipes = () => {
             axios
             
-                .get('http://localhost:8000/recipes')
-                
+                // .get('http://localhost:8000/recipes')
+                .get('https://family-recipe-backend.herokuapp.com/recipes')
+                //https://family-recipe-backend.herokuapp.com
                 .then(({data}) => {
                     setRecipes(data)
                     setSearchResults(data)

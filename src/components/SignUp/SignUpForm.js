@@ -8,8 +8,8 @@ const SignUpForm = props => {
 
     const history = useHistory();
     const initialFormState = {
-        id: '',
-        name: '',
+        // id: '',
+        username: '',
         password: '',
     }
 
@@ -32,14 +32,14 @@ const SignUpForm = props => {
         e.preventDefault()
         Axios
         // axiosWithAuth()
-            // .post('https://family-recipe-backend.herokuapp.com/auth/register', formState)
-            .get('https://family-recipe-backend.herokuapp.com/users/:id')
+            .post('https://family-recipe-backend.herokuapp.com/auth/register', formState)
+            // .get('https://family-recipe-backend.herokuapp.com/users/:id')
             .then(response => {
-                console.log(response);
+                console.log("Sign up successful : ",response);
                 // console.log(response.data);
-                // setFormState(initialFormState);
+                setFormState(initialFormState);
                 // localStorage.setItem("token", response.data.token);
-                // history.push("/login");
+                history.push("/log-in");
             })
             .catch(err =>{
                 console.log("error post signup :", err);
@@ -51,12 +51,12 @@ const SignUpForm = props => {
         <Wrapper>
             <Headline>Sign Up</Headline>
             <Form id='signUpForm' onSubmit={formSubmit}>
-                <Label htmlFor='name'>Name</Label>
+                <Label htmlFor='username'>Name</Label>
                 <Input 
-                    id='name'
-                    name='name'
+                    id='username'
+                    name='username'
                     placeholder='Enter your name'
-                    value={formState.name}
+                    value={formState.username}
                     onChange={inputChange}
                     type='text'
                     // required
