@@ -8,7 +8,7 @@ const AddRecipe = props => {
     return (
         <Wrapper>
             <Headline>Add Your Secret Family Recipe</Headline>
-            <RecipeForm />
+            <RecipeForm {...props} />
         </Wrapper>
         
     )
