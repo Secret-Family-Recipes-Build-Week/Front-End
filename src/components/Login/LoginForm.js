@@ -53,7 +53,7 @@ const LoginForm = (props) => {
 
         <Label htmlfor = "password">Password</Label>
         <Input 
-        type = "text"
+        type = "password"
         name = "password"
         placeholder = "Enter your password"
         value = {userLogin.password}

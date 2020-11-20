@@ -62,12 +62,12 @@ const SignUpForm = props => {
                     // required
                 />
 
-                <Label htmlFor='password'>pw</Label>
+                <Label htmlFor='password'>Password</Label>
                 <Input 
-                    type='text'
+                    type='password'
                     id='password'
                     name='password'
-                    placeholder='Enter your email'
+                    placeholder='Enter your password'
                     value={formState.password}
                     onChange={inputChange}
                     // type='email'
