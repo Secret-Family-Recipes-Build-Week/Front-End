@@ -10,6 +10,7 @@ const Nav = props => {
             <Menu>
                 <MenuLinks to='/'>Home</MenuLinks>
                 <MenuLinks to='/sign-up'>Sign Up</MenuLinks>
+                <MenuLinks to = '/log-in'>Log in</MenuLinks>
                 <MenuLinks to='/add-a-recipe'>Add a Recipe</MenuLinks>
             </Menu>
         </NavBox>

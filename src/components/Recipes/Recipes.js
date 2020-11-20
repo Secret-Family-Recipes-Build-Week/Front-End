@@ -3,6 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 import RecipeCard from './RecipeCard'
 import FilterBox from '../FilterBox/FilterBox'
+import axiosWithAuth from '../axiosAuth/axiosWithAuth'
 
 const Recipes = props => {
 
@@ -22,7 +23,10 @@ const Recipes = props => {
     useEffect(() => {
         const getRecipes = () => {
             axios
-                .get('http://localhost:8000/recipes')
+            
+                // .get('http://localhost:8000/recipes')
+                .get('https://family-recipe-backend.herokuapp.com/recipes')
+                //https://family-recipe-backend.herokuapp.com
                 .then(({data}) => {
                     setRecipes(data)
                     setSearchResults(data)
