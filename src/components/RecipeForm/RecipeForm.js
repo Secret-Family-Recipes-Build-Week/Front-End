@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Axios from 'axios'
 import axiosWithAuth from '../axiosAuth/axiosWithAuth'
 import { useHistory } from 'react-router-dom'
+import * as yup from "yup"
+import {addRecipeFormSchema} from '../../formSchema'
 
 
 const RecipeForm = props => {
@@ -21,6 +23,41 @@ const RecipeForm = props => {
     }
 
     const [formState, setFormState] = useState(initialFormState)
+
+
+    // server err
+    const [serverError, setServerError] = useState('')
+
+    // control whether the form can be submitted
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false)
+
+    //managing state for errors
+    const [errors, setErrors] = useState(initialFormState)
+
+
+    const validateChange = (e) => {
+        yup
+            .reach(addRecipeFormSchema, e.target.name)
+            .validate(e.target.value)
+            //if valid then clear errors
+            .then(valid => {
+                setErrors({...errors, [e.target.name]: ""})
+            })
+            .catch(err => {
+                //if fails validation, set error to this.state
+                console.log("There is an error,", err)
+                setErrors({...errors, [e.target.name]: err.errors[0]})
+            })
+    }
+
+    //Whenever state updates, validate form, if valid change button
+    useEffect(() => {
+        addRecipeFormSchema.isValid(formState).then(valid => {
+            console.log("valid?", valid);
+            setIsButtonDisabled(!valid)
+        })
+    },[formState])
+
 
     /*HANDLE DYNAMIC INGREDIENT INPUTS */
 
@@ -183,7 +220,7 @@ const RecipeForm = props => {
             {createMethodInputs()}
             <AddInputBtn onClick={addStep}>Add Step</AddInputBtn>
 
-            <Button id='submit' type='submit'>Add Recipe</Button>
+            <Button id='submit' type='submit' disabled={isButtonDisabled}>Add Recipe</Button>
         </Form>
     )
 }
@@ -241,6 +278,11 @@ const Button = styled.button`
     margin-top: 1rem;
     &:hover{
         background-color: #6712E0;
+    }
+    &:disabled {
+        background-color: white;
+        border: 1px solid #ccc;
+        color: #ccc;
     }
 `
 

@@ -1,8 +1,10 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import {useHistory} from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 import axiosWithAuth from "../axiosAuth/axiosWithAuth";
+import * as yup from "yup"
+import {userFormSchema} from '../../formSchema'
 
 const LoginForm = (props) => {
 
@@ -14,6 +16,38 @@ const LoginForm = (props) => {
     };
 
     const [userLogin, setUserLogin] = useState(initialFormState);
+
+    const [serverError, setServerError] = useState('')
+
+    // control whether the form can be submitted
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false)
+
+    //managing state for errors
+    const [errors, setErrors] = useState(initialFormState)
+
+    const validateChange = (e) => {
+        yup
+            .reach(userFormSchema, e.target.name)
+            .validate(e.target.value)
+            //if valid then clear errors
+            .then(valid => {
+                setErrors({...errors, [e.target.name]: ""})
+            })
+            .catch(err => {
+                //if fails validation, set error to this.state
+                console.log("There is an error,", err)
+                setErrors({...errors, [e.target.name]: err.errors[0]})
+            })
+    }
+
+    //Whenever state updates, validate form, if valid change button
+    useEffect(() => {
+        userFormSchema.isValid(userLogin).then(valid => {
+            console.log("valid?", valid);
+            setIsButtonDisabled(!valid)
+        })
+    },[userLogin])
+
 
     const inputChange = (e) => {
         e.persist();
@@ -60,7 +94,7 @@ const LoginForm = (props) => {
         onChange = {inputChange}
         required
         />
-        <Button>Submit</Button>
+        <Button disabled={isButtonDisabled}>Submit</Button>
     </Form>
     </Wrapper>
     )
@@ -135,6 +169,11 @@ const Button = styled.button`
     margin-top: 1rem;
     &:hover{
         background-color: #6712E0;
+    }
+    &:disabled {
+        background-color: white;
+        border: 1px solid #ccc;
+        color: #ccc;
     }
 `
 

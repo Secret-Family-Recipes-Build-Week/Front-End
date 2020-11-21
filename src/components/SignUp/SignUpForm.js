@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Axios from 'axios';
 import axiosWithAuth from "../axiosAuth/axiosWithAuth";
 import {useHistory} from "react-router-dom";
+import * as yup from "yup"
+import {userFormSchema} from '../../formSchema'
 
 const SignUpForm = props => {
 
@@ -13,7 +15,16 @@ const SignUpForm = props => {
         password: '',
     }
 
+    // server err
+    const [serverError, setServerError] = useState('')
+
     const [formState, setFormState] = useState(initialFormState)
+
+    // control whether the form can be submitted
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false)
+
+    //managing state for errors
+    const [errors, setErrors] = useState(initialFormState)
 
     /*INPUT CHANGE */
 
@@ -25,6 +36,29 @@ const SignUpForm = props => {
         }
         setFormState(newFormData)
     }
+
+    const validateChange = (e) => {
+        yup
+            .reach(userFormSchema, e.target.name)
+            .validate(e.target.value)
+            //if valid then clear errors
+            .then(valid => {
+                setErrors({...errors, [e.target.name]: ""})
+            })
+            .catch(err => {
+                //if fails validation, set error to this.state
+                console.log("There is an error,", err)
+                setErrors({...errors, [e.target.name]: err.errors[0]})
+            })
+    }
+
+    //Whenever state updates, validate form, if valid change button
+    useEffect(() => {
+        userFormSchema.isValid(formState).then(valid => {
+            console.log("valid?", valid);
+            setIsButtonDisabled(!valid)
+        })
+    },[formState])
 
     /*FORM SUBMIT */
 
@@ -51,7 +85,7 @@ const SignUpForm = props => {
         <Wrapper>
             <Headline>Sign Up</Headline>
             <Form id='signUpForm' onSubmit={formSubmit}>
-                <Label htmlFor='username'>Name</Label>
+                <Label htmlFor='username'>Username</Label>
                 <Input 
                     id='username'
                     name='username'
@@ -74,7 +108,7 @@ const SignUpForm = props => {
                     // required 
                 />
 
-                <Button id='submit' type='submit'>Sign Up</Button>
+                <Button id='submit' type='submit' disabled={isButtonDisabled}>Sign Up</Button>
             </Form>
         </Wrapper>
 
@@ -150,6 +184,11 @@ const Button = styled.button`
     margin-top: 1rem;
     &:hover{
         background-color: #6712E0;
+    }
+    &:disabled {
+        background-color: white;
+        border: 1px solid #ccc;
+        color: #ccc;
     }
 `
 
